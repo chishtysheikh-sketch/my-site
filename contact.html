@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Booking | Hidden Yeongdo</title>
+  <meta name="description" content="Book a tour or send us a question.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ===== Shared header (same on every page) ===== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="index.html">HIDDEN YEONGDO</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="packages.html">Tours</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero" style="background-image: url('images/bg-contact.jpg')">
+      <div class="container">
+        <p class="eyebrow">Contact &amp; booking</p>
+        <h1>Let's walk together</h1>
+        <p>Book a tour or ask us anything. We usually reply within 24 hours.</p>
+      </div>
+    </section>
+
+    <section class="bg-photo overlay-light" style="background-image: url('images/bg-contact-body.jpg'); background-position: center 35%">
+      <div class="container contact-layout">
+        <!-- novalidate: we check the fields ourselves in js/main.js (part 8) -->
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name">
+            <p class="error" id="name-error"></p>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email">
+            <p class="error" id="email-error"></p>
+          </div>
+          <div class="form-group">
+            <label for="package">Package</label>
+            <select id="package" name="package">
+              <option value="">Choose a package…</option>
+              <option value="1day">1-Day Hidden Yeongdo Tour</option>
+              <option value="private">Private group tour (ask for a quote)</option>
+              <option value="question">Just a question</option>
+            </select>
+            <p class="error" id="package-error"></p>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Preferred date, number of people, questions…"></textarea>
+            <p class="error" id="message-error"></p>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+          <p class="success" id="form-success" role="status"></p>
+        </form>
+
+        <aside class="info-box">
+          <h2>Visit us</h2>
+          <p><strong>Address</strong><br>[Address], Yeongdo-gu, Busan</p>
+          <p><strong>Phone</strong><br>051-000-0000</p>
+          <p><strong>Email</strong><br><a href="mailto:hello@hiddenyeongdo.kr">hello@hiddenyeongdo.kr</a></p>
+          <p><strong>Business hours</strong><br>Mon–Sat 09:00–18:00<br>Sunday: tours only</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <footer class="site-footer bg-photo overlay-footer" style="background-image: url('images/bg-footer.jpg')">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="index.html">HIDDEN YEONGDO</a>
+        <p>One island. Three hidden faces of Busan.</p>
+      </div>
+      <div>
+        <p>[Address], Yeongdo-gu, Busan</p>
+        <p>051-000-0000 · <a href="mailto:hello@hiddenyeongdo.kr">hello@hiddenyeongdo.kr</a></p>
+      </div>
+      <div>
+        <p>Mon–Sat 09:00–18:00</p>
+        <p>&copy; <span id="year">2026</span> Hidden Yeongdo · Student project</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

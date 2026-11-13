@@ -1,7 +1,187 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>My Site</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Yeongdo | Hidden tours of Yeongdo, Busan</title>
+  <meta name="description" content="Small-group walking tours to three hidden places on Yeongdo island, Busan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-  <h1>Hello! এটা আমার প্রথম সাইট</h1>
+  <!-- ===== Shared header (same on every page) ===== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="index.html">HIDDEN YEONGDO</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="packages.html">Tours</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Small-group walking tours · Yeongdo, Busan</p>
+        <h1>One island. Three hidden faces.</h1>
+        <p>Most visitors see Yeongdo from a bridge. We take you onto it: the cliffs, the summit and a pebble beach at sunset.</p>
+        <a class="btn" href="packages.html">See the 1-Day Tour →</a>
+      </div>
+    </section>
+
+    <!-- Trip overview: text + route map, with tabs (js/main.js part 10) -->
+    <section class="trip-overview">
+      <div class="container">
+        <p class="eyebrow trip-eyebrow">Trip overview</p>
+        <div class="tabs" role="tablist" aria-label="Trip overview">
+          <button class="tab active" role="tab" aria-selected="true" aria-controls="tab-overview" id="t-overview">Overview</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-directions" id="t-directions">Directions</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-know" id="t-know">Good to know</button>
+        </div>
+        <div class="trip-grid">
+          <div>
+            <div class="tab-panel active" id="tab-overview" role="tabpanel" aria-labelledby="t-overview">
+              <p class="trip-lead">Want to see the Busan that locals love? On our 1-Day Hidden Yeongdo Tour you cross the bridge from Nampo and follow one island from west to east: a cliff path above the sea, a seafood lunch with the haenyeo divers, a guided hike up Bongnaesan and a pebble beach at sunset.</p>
+              <p class="trip-lead">Small groups of up to 10, led by founder Utsho, on foot and by local bus. No long transfers, just time to look around.</p>
+              <ul class="trip-facts">
+                <li><strong>1 day</strong>09:30 – 18:00</li>
+                <li><strong>3 places</strong>coast · summit · beach</li>
+                <li><strong>≈ 8 km</strong>on foot</li>
+                <li><strong>Max 10</strong>people</li>
+              </ul>
+            </div>
+            <div class="tab-panel" id="tab-directions" role="tabpanel" aria-labelledby="t-directions">
+              <ol class="directions">
+                <li><span class="dir-num">S</span><div><strong>Nampo Station, Exit 6</strong> (Line 1)<br>Meet your guide, then take a local bus across Yeongdo Bridge to the start of the coastal walk.</div></li>
+                <li><span class="dir-num">1</span><div><strong>Jeoryeong Coastal Walk</strong><br>Start at the mosaic wall and walk south along the sea, about 2 hours. The walk ends at Jungni, where we stop for a seafood lunch with the haenyeo divers.</div></li>
+                <li><span class="dir-num">2</span><div><strong>Bongnaesan</strong><br>A short ride up to the trailhead, then a guided hike to the 395 m summit and down the east side of the island.</div></li>
+                <li><span class="dir-num">3</span><div><strong>Gamji Beach</strong><br>Local bus towards Taejongdae, then the promenade, grilled clams and sunset. Buses run back to Nampo.</div></li>
+              </ol>
+              <p class="dir-note">Want to plan it yourself? <a href="gallery.html#map-section">See all stops on the live map</a>.</p>
+            </div>
+            <div class="tab-panel" id="tab-know" role="tabpanel" aria-labelledby="t-know">
+              <ul class="know-list">
+                <li><strong>Shoes:</strong> trails and pebble beaches, so wear trainers or hiking shoes.</li>
+                <li><strong>T-money card:</strong> bus fares are not included; charge your card before you come.</li>
+                <li><strong>Rain plan:</strong> in heavy rain we skip the summit and add a café stop on the coast.</li>
+                <li><strong>Respect locals:</strong> parts of the route pass homes; we keep groups small and quiet.</li>
+              </ul>
+            </div>
+          </div>
+          <figure class="trip-map-wrap">
+          <svg class="trip-map" viewBox="0 0 600 537" role="img" aria-label="Map of Yeongdo island with the tour route from Nampo Station to Jeoryeong Coastal Walk, Bongnaesan and Gamji Beach">
+            <path d="M0.0,0.0 L304.0,0.0 L288.0,24.4 L192.0,24.4 L120.0,29.3 L80.0,48.8 L56.0,87.8 L40.0,146.4 L24.0,205.0 L0.0,253.8 Z" class="land land-main"/>
+            <path d="M132.0,53.7 L192.0,58.6 L256.0,63.4 L320.0,58.6 L384.0,63.4 L448.0,83.0 L496.0,117.1 L544.0,156.2 L568.0,205.0 L576.0,258.6 L580.0,312.3 L568.0,361.1 L568.0,409.9 L560.0,453.8 L544.0,497.8 L504.0,512.4 L464.0,488.0 L424.0,453.8 L376.0,424.6 L328.0,390.4 L288.0,351.4 L256.0,312.3 L228.0,263.5 L208.0,214.7 L188.0,165.9 L164.0,117.1 L140.0,78.1 Z" class="land"/>
+            <text x="336.0" y="126.9" class="map-area">YEONGDO</text>
+            <path d="M100.8,32.2 L200.0,175.7 L268.0,312.3 L314.4,215.7 L544.0,380.6" class="route"/>
+            <circle cx="100.8" cy="32.2" r="15" class="pin-ring"/><circle cx="100.8" cy="32.2" r="9" class="pin"/>
+            <text x="112.8" y="18.200000000000003" text-anchor="start" class="map-label">Nampo Station · Busan</text>
+            <circle cx="200.0" cy="175.7" r="9" class="stop-dot"/><text x="200.0" y="179.7" class="stop-num">1</text>
+            <text x="186.0" y="179.7" text-anchor="end" class="map-label">Jeoryeong Coastal Walk</text>
+            <circle cx="314.4" cy="215.7" r="9" class="stop-dot"/><text x="314.4" y="219.7" class="stop-num">2</text>
+            <text x="328.4" y="205.7" text-anchor="start" class="map-label">Bongnaesan</text>
+            <circle cx="544.0" cy="380.6" r="9" class="stop-dot"/><text x="544.0" y="384.6" class="stop-num">3</text>
+            <text x="530.0" y="404.6" text-anchor="end" class="map-label">Gamji Beach</text>
+          </svg>
+            <figcaption>Simplified map, not to scale</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three destinations (blurred night view from Bongnaesan) -->
+    <section class="bg-photo overlay-night" style="background-image: url('images/bg-destinations.jpg')">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Our three destinations</p>
+          <h2>The Yeongdo most tourists miss</h2>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <img loading="lazy" src="images/jeoryeong-1.jpg" alt="Pebble shore and cliffs on the Jeoryeong Coastal Walk">
+            <div class="card-body">
+              <p class="tag">The coast</p>
+              <h3>Jeoryeong Coastal Walk</h3>
+              <p>A 3 km cliff-side walk between the rocks and the open sea.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img loading="lazy" src="images/bongnaesan-1.jpg" alt="Night view of Namhang Bridge and Songdo from Bongnaesan">
+            <div class="card-body">
+              <p class="tag">The summit</p>
+              <h3>Bongnaesan Mountain</h3>
+              <p>Climb the island's 395 m guardian peak and see all of Busan.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img loading="lazy" src="images/gamji-1.svg" alt="Gamji Beach at sunset">
+            <div class="card-body">
+              <p class="tag">The sunset</p>
+              <h3>Gamji Beach</h3>
+              <p>A pebble beach for sunset and grilled clams.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why us + sunset widget -->
+    <section class="bg-photo overlay-dark" style="background-image: url('images/bg-why.jpg')">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Why Hidden Yeongdo</p>
+          <h2>Slow travel, the local way</h2>
+          <p>Small groups of up to 10, a local guide, and a day that supports Yeongdo's small shops and restaurants. All three places are on one island, so you spend your time walking, not sitting on a bus.</p>
+          <p style="margin-top:1.4rem"><a class="btn" href="about.html">Our story</a></p>
+        </div>
+        <div class="sunset-box">
+          <span style="font-size:2rem">🌅</span>
+          <div>
+            <p>Today's sunset at Gamji Beach</p>
+            <strong id="sunset-time">loading…</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action band (blurred photo background) -->
+    <section class="bg-photo overlay-dark cta-band" style="background-image: url('images/bg-cta-home.jpg')">
+      <div class="container">
+        <h2>Ready to walk Yeongdo?</h2>
+        <p>Cliffs, a summit and a sunset beach, in one small-group day.</p>
+        <a class="btn" href="contact.html">Book your spot</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <footer class="site-footer bg-photo overlay-footer" style="background-image: url('images/bg-footer.jpg')">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="index.html">HIDDEN YEONGDO</a>
+        <p>One island. Three hidden faces of Busan.</p>
+      </div>
+      <div>
+        <p>[Address], Yeongdo-gu, Busan</p>
+        <p>051-000-0000 · <a href="mailto:hello@hiddenyeongdo.kr">hello@hiddenyeongdo.kr</a></p>
+      </div>
+      <div>
+        <p>Mon–Sat 09:00–18:00</p>
+        <p>&copy; <span id="year">2026</span> Hidden Yeongdo · Student project</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

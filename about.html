@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About us | Hidden Yeongdo</title>
+  <meta name="description" content="Our story, team and values.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ===== Shared header (same on every page) ===== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="index.html">HIDDEN YEONGDO</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active" aria-current="page">About</a></li>
+        <li><a href="packages.html">Tours</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero" style="background-image: url('images/bg-about.jpg')">
+      <div class="container">
+        <p class="eyebrow">About us</p>
+        <h1>The Busan locals love</h1>
+        <p>Hidden Yeongdo is a small tour startup founded by a student who wanted visitors to see more than crowded beaches.</p>
+      </div>
+    </section>
+
+    <!-- Story & mission -->
+    <section class="bg-photo overlay-light" style="background-image: url('images/bg-story.jpg')">
+      <div class="container split story">
+        <img loading="lazy" src="images/story.jpg" alt="Namhang Bridge and the Songdo skyline at dusk, seen from the Yeongdo shore">
+        <div>
+          <p class="eyebrow">Our story</p>
+          <h2>Onto the island, not over it</h2>
+          <p>Every day thousands of people cross the bridges to Yeongdo without stopping. We kept finding quiet trails, cliff-top alleys and sea views that never appear in tourist guides, so we decided to share them.</p>
+          <p style="margin-top:1rem"><strong>Our mission:</strong> slow, small-group walks that respect local residents and support Yeongdo's small businesses.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder -->
+    <section class="founder-section" style="background-image: url('images/bg-founder.jpg')">
+      <div class="container split founder">
+        <img loading="lazy" src="images/founder.jpg" alt="Chishtia Nion Utsho, founder of Hidden Yeongdo">
+        <div>
+          <p class="eyebrow">Founder</p>
+          <h2>Chishtia Nion Utsho</h2>
+          <p>Utsho is the founder and only member of Hidden Yeongdo. He started it to show visitors the side of Busan that locals love: quiet cliff paths, a guardian mountain and a pebble beach at sunset, all on one island.</p>
+          <p style="margin-top:1rem">He researches every place, plans the routes, designs and builds this website, and tells the stories of each stop along the way.</p>
+          <p style="margin-top:1.4rem"><a class="btn" href="packages.html">Walk with us</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="bg-photo overlay-night" style="background-image: url('images/bg-values.jpg')">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Why choose us</p>
+          <h2>Our values</h2>
+        </div>
+        <div class="cards">
+          <div class="card"><div class="card-body"><p class="value-icon">🏘️</p><h3>Local first</h3><p>We eat, shop and rest at family-run places on the island.</p></div></div>
+          <div class="card"><div class="card-body"><p class="value-icon">🚶</p><h3>Slow travel</h3><p>Three places in one day, with time to actually look around.</p></div></div>
+          <div class="card"><div class="card-body"><p class="value-icon">👥</p><h3>Small groups</h3><p>Max 10 people, so we stay quiet on trails and in residential alleys.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <footer class="site-footer bg-photo overlay-footer" style="background-image: url('images/bg-footer.jpg')">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="index.html">HIDDEN YEONGDO</a>
+        <p>One island. Three hidden faces of Busan.</p>
+      </div>
+      <div>
+        <p>[Address], Yeongdo-gu, Busan</p>
+        <p>051-000-0000 · <a href="mailto:hello@hiddenyeongdo.kr">hello@hiddenyeongdo.kr</a></p>
+      </div>
+      <div>
+        <p>Mon–Sat 09:00–18:00</p>
+        <p>&copy; <span id="year">2026</span> Hidden Yeongdo · Student project</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

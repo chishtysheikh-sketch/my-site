@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery & Map | Hidden Yeongdo</title>
+  <meta name="description" content="Photos, media and an OpenStreetMap map of our three destinations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap">
+  <!-- Leaflet (free map library for OpenStreetMap) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ===== Shared header (same on every page) ===== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="index.html">HIDDEN YEONGDO</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="packages.html">Tours</a></li>
+        <li><a href="gallery.html" class="active" aria-current="page">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero" style="background-image: url('images/bg-gallery.jpg')">
+      <div class="container">
+        <p class="eyebrow">Gallery &amp; map</p>
+        <h1>A virtual tour of Yeongdo</h1>
+        <p>Walk the route before you come: photos, video, sound and a live map.</p>
+      </div>
+    </section>
+
+    <!-- Photo gallery: filter buttons + lightbox (js/main.js parts 5 & 6) -->
+    <section class="bg-photo overlay-night" style="background-image: url('images/bg-gallery-body.jpg')">
+      <div class="container">
+        <div class="filters" role="group" aria-label="Filter photos">
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="coast">Coast</button>
+          <button class="filter-btn" type="button" data-filter="mountain">Mountain</button>
+          <button class="filter-btn" type="button" data-filter="beach">Beach</button>
+        </div>
+        <div class="gallery-grid">
+          <!-- Coast: our own photos -->
+          <button class="gallery-item" type="button" data-place="coast"><img loading="lazy" src="images/jeoryeong-1.jpg" alt="Pebble shore below the cliffs, Jeoryeong Coastal Walk"></button>
+          <button class="gallery-item" type="button" data-place="coast"><img loading="lazy" src="images/jeoryeong-2.jpg" alt="Tile mosaic wall at the start of the trail"></button>
+          <button class="gallery-item" type="button" data-place="coast"><img loading="lazy" src="images/jeoryeong-3.jpg" alt="The coastal path under the cliff-top houses of Huinnyeoul"></button>
+          <button class="gallery-item" type="button" data-place="coast"><img loading="lazy" src="images/jeoryeong-4.jpg" alt="Trail entrance with the Jeoryeong Coastal Walk sign"></button>
+          <button class="gallery-item" type="button" data-place="coast"><img loading="lazy" src="images/jeoryeong-5.jpg" alt="Waves, Namhang Bridge and the Songdo skyline at dusk"></button>
+          <button class="gallery-item" type="button" data-place="coast"><img loading="lazy" src="images/jeoryeong-6.jpg" alt="Arms wide open on the seaside boardwalk"></button>
+          <button class="gallery-item" type="button" data-place="coast"><img loading="lazy" src="images/jeoryeong-7.jpg" alt="Ships waiting at anchor off the coast"></button>
+          <!-- Mountain: our own night photos from Bongnaesan -->
+          <button class="gallery-item" type="button" data-place="mountain"><img loading="lazy" src="images/bongnaesan-1.jpg" alt="Songdo skyline and Namhang Bridge at night, seen from Bongnaesan"></button>
+          <button class="gallery-item" type="button" data-place="mountain"><img loading="lazy" src="images/bongnaesan-2.jpg" alt="Temple courtyard on Bongnaesan after the rain"></button>
+          <button class="gallery-item" type="button" data-place="mountain"><img loading="lazy" src="images/bongnaesan-3.jpg" alt="Golden Buddha glowing through the temple door"></button>
+          <button class="gallery-item" type="button" data-place="mountain"><img loading="lazy" src="images/bongnaesan-4.jpg" alt="Prayer candles at the temple on Bongnaesan"></button>
+          <button class="gallery-item" type="button" data-place="mountain"><img loading="lazy" src="images/bongnaesan-5.jpg" alt="City lights of Busan from the mountain"></button>
+          <button class="gallery-item" type="button" data-place="mountain"><img loading="lazy" src="images/bongnaesan-6.jpg" alt="Harbour lights below the hills at night"></button>
+          <button class="gallery-item" type="button" data-place="mountain"><img loading="lazy" src="images/bongnaesan-7.jpg" alt="Through the pines: the harbour and Songdo at night from Bongnaesan"></button>
+          <button class="gallery-item" type="button" data-place="mountain"><img loading="lazy" src="images/bongnaesan-8.jpg" alt="The winding mountain road up Bongnaesan at night"></button>
+          <!-- Beach: dummy photos until we visit -->
+          <button class="gallery-item" type="button" data-place="beach"><img loading="lazy" src="images/gamji-1.svg" alt="Gamji Beach at sunset (dummy photo)"></button>
+          <button class="gallery-item" type="button" data-place="beach"><img loading="lazy" src="images/gamji-2.svg" alt="Pebble shore of Gamji Beach (dummy photo)"></button>
+          <button class="gallery-item" type="button" data-place="beach"><img loading="lazy" src="images/gamji-3.svg" alt="Grilled clam tents by Gamji Beach (dummy photo)"></button>
+        </div>
+
+        <!-- Other media (replace with your own files before the final) -->
+        <div class="media-grid">
+          <div class="media-card">
+            <h3>▶ Waves on the Jeoryeong shore</h3>
+            <video controls playsinline preload="none" poster="images/coast-poster.jpg">
+              <source src="videos/coast.mp4" type="video/mp4">
+              Your browser cannot play this video.
+            </video>
+            <p class="soon">Filmed and edited by Utsho · 23 sec with sound</p>
+          </div>
+          <div class="media-card">
+            <h3>▶ Sunrise on Bongnaesan</h3>
+            <p class="soon">Coming soon: a sunrise timelapse from Haedoji (Sunrise) Observatory on the slope of Bongnaesan, the first place on Yeongdo to see the morning sun.</p>
+          </div>
+          <div class="media-card">
+            <h3>◎ 360° Gamji Beach panorama</h3>
+            <p class="soon">Coming soon: panorama of the pebble beach at sunset.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OpenStreetMap (js/main.js part 7) -->
+    <section id="map-section" class="bg-photo overlay-dark" style="background-image: url('images/bg-map.jpg')">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Map</p>
+          <h2>All three on one island</h2>
+          <p>Click a marker to see the place. Map data © OpenStreetMap contributors.</p>
+        </div>
+        <div id="map" role="region" aria-label="Map of the three destinations"></div>
+      </div>
+    </section>
+
+    <!-- Lightbox (hidden until a photo is clicked) -->
+    <div class="lightbox" aria-modal="true" role="dialog" aria-label="Photo viewer">
+      <button class="lb-btn lb-close" type="button" aria-label="Close">×</button>
+      <button class="lb-btn lb-prev" type="button" aria-label="Previous photo">‹</button>
+      <img src="" alt="">
+      <p></p>
+      <button class="lb-btn lb-next" type="button" aria-label="Next photo">›</button>
+    </div>
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <footer class="site-footer bg-photo overlay-footer" style="background-image: url('images/bg-footer.jpg')">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="index.html">HIDDEN YEONGDO</a>
+        <p>One island. Three hidden faces of Busan.</p>
+      </div>
+      <div>
+        <p>[Address], Yeongdo-gu, Busan</p>
+        <p>051-000-0000 · <a href="mailto:hello@hiddenyeongdo.kr">hello@hiddenyeongdo.kr</a></p>
+      </div>
+      <div>
+        <p>Mon–Sat 09:00–18:00</p>
+        <p>&copy; <span id="year">2026</span> Hidden Yeongdo · Student project</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
